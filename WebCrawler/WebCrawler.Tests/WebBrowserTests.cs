@@ -4,7 +4,7 @@
     public sealed class WebBrowserTests
     {
         [TestMethod]
-        public void GetHtml_ShouldReturns_Null()
+        public void GetHtml_NotExistingFile_ShouldReturns_Null()
         {
             WebBrowser webBrowser = new();
 
@@ -14,7 +14,7 @@
         }
 
         [TestMethod]
-        public void GetHtml_ShouldReturns_Content()
+        public void GetHtml_ExistingFile_ShouldReturns_Content()
         {
             WebBrowser webBrowser = new();
 
