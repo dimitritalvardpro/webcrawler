@@ -15,5 +15,15 @@ namespace WebCrawler
 
             return null!;
         }
+
+        /// <inheritdoc/>
+        public string ResolvePath(string currentPage, string href)
+        {
+            string currentDirectory = Path.GetDirectoryName(currentPage)!;
+
+            string combinedPath = Path.Combine(currentDirectory, href);
+
+            return Path.GetFullPath(combinedPath);
+        }
     }
 }
