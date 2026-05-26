@@ -4,3 +4,7 @@
 
 /.vs
 /WebCrawler/.vs
+/WebCrawler/WebCrawler/bin/Debug/net10.0
+/WebCrawler/WebCrawler/obj
+/WebCrawler/WebCrawler.Tests/bin
+/WebCrawler/WebCrawler.Tests/obj
