@@ -11,7 +11,9 @@ namespace WebCrawler
         private static List<string> CrawledEmails = [];
 
         /// <summary>
-        /// Retrieves emails in given HTML page 
+        /// Crawls a page and its child pages recursively
+        /// until the specified depth is reached.
+        /// Only distinct emails are returned.
         /// </summary>
         /// <param name="browser">Web browser</param>
         /// <param name="url">>URL of the HTML page to visit</param>
@@ -71,7 +73,10 @@ namespace WebCrawler
         }
 
         /// <summary>
-        /// Reads the current page to retrieve the child pages and emails
+        /// Reads the current page to retrieve the child pages and emails :
+        /// Parses all anchor tags from the HTML content.
+        /// Mailto links are stored as emails.
+        /// HTML links are returned only when crawling is enabled.
         /// </summary>
         /// <param name="htmlContent"></param>
         private static List<string> ReadPageHrefAndReturnsChildPages(string htmlContent, bool keepCrawling)
