@@ -18,6 +18,7 @@
         [DataRow("C:\\TestHtml\\index.html", 0, new string[] { "nullepart@mozilla.org" })]
         [DataRow("C:\\TestHtml\\index.html", 1, new string[] { "nullepart@mozilla.org", "ailleurs@mozilla.org" })]
         [DataRow("C:\\TestHtml\\index.html", 2, new string[] { "nullepart@mozilla.org", "ailleurs@mozilla.org", "loin@mozilla.org" })]
+        [DataRow("C:\\TestHtml\\index.html", -1, new string[] { "nullepart@mozilla.org", "ailleurs@mozilla.org", "loin@mozilla.org" })]
         public void GetEmailsInPageAndChildPages_ShouldReturns_ExpectedEmails(string url, int depth, string[] resultEmails)
         {
             WebCrawler webCrawler = new();

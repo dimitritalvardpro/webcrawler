@@ -46,7 +46,7 @@ namespace WebCrawler
                 return;
             }
 
-            bool keepCrawling = currentDepth < maximumDepth;
+            bool keepCrawling = maximumDepth == -1 || currentDepth < maximumDepth;
 
             if (!CrawledPages.Contains(currentPageUrl))
             {
