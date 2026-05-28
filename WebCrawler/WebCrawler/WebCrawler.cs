@@ -7,8 +7,8 @@ namespace WebCrawler
     {
         private IWebBrowser? _browser;
 
-        private static List<string> CrawledPages = [];
-        private static List<string> CrawledEmails = [];
+        private readonly List<string> CrawledPages = [];
+        private readonly List<string> CrawledEmails = [];
 
         /// <summary>
         /// Crawls a page and its child pages recursively
@@ -79,7 +79,7 @@ namespace WebCrawler
         /// HTML links are returned only when crawling is enabled.
         /// </summary>
         /// <param name="htmlContent"></param>
-        private static List<string> ReadPageHrefAndReturnsChildPages(string htmlContent, bool keepCrawling)
+        private List<string> ReadPageHrefAndReturnsChildPages(string htmlContent, bool keepCrawling)
         {
             List<string> childPages = [];
 
@@ -111,7 +111,7 @@ namespace WebCrawler
         /// Process a href link and add the email in the crawled list
         /// </summary>
         /// <param name="link">Href link to process</param>
-        private static void ProcessMailtoHref(string link)
+        private void ProcessMailtoHref(string link)
         {
             string email = link["mailto:".Length..];
             if (!CrawledEmails.Contains(email))
