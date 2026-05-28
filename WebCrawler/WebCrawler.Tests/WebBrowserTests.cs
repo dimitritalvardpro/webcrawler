@@ -43,15 +43,5 @@
 
             Assert.AreEqual("C:\\Test\\ChildPages\\Child.html", resolvedPath);
         }
-
-        [TestMethod]
-        public void ResolvePath_Uri_ShouldReturns_Uri()
-        {
-            WebBrowser webBrowser = new();
-         
-            var resolvedPath = webBrowser.ResolvePath("C:\\Test\\Parent.html", "www.google.com");
-
-            Assert.AreEqual("www.google.com", resolvedPath);
-        }
     }
 }

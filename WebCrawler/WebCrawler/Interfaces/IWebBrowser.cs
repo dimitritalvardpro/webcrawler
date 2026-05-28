@@ -14,7 +14,6 @@
 
         /// <summary>
         /// Resolve the path of the child page with the parent path
-        /// if the href is an external URL then returns it
         /// </summary>
         /// <param name="currentPage">URL of the current page</param>
         /// <param name="href">Href provided for the child page</param>
